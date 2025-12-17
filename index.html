@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajkumar | Software Developer Portfolio</title>
+    <meta name="description" content="Rajkumar - Software Developer specializing in React and full-stack development">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-initial">R</span>
+                <span class="logo-text">RAJKUMAR</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#" class="btn-resume" id="downloadResume">
+                <i class="fas fa-download"></i>
+                <span>Resume</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="animated-bg">
+                <div class="floating-shape shape-circle"></div>
+                <div class="floating-shape shape-square"></div>
+                <div class="floating-shape shape-triangle"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="greeting-container">
+                    <span class="wave-emoji"></span>
+                    <p class="hero-greeting">Hello, I'm</p>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-line title-gradient">Rajkumar</span>
+                </h1>
+                
+                <div class="subtitle-container">
+                    <h2 class="hero-subtitle">
+                        <span class="typing-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </h2>
+                </div>
+                
+                <p class="hero-description">
+                    <span class="highlight-text">Crafting innovative solutions</span> through collaboration, 
+                    strategic thinking, and cutting-edge technology. Passionate about building 
+                    <span class="highlight-text">impactful digital experiences</span>.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">LeetCode Problems</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="200">0</div>
+                        <div class="stat-label">GFG Solutions</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Projects Built</div>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Let's Connect</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <span>View Projects</span>
+                        <i class="fas fa-code"></i>
+                    </a>
+                </div>
+                
+                <div class="social-preview">
+                    <a href="https://github.com/rajkumar2504" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rajkumar2504" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/rajkumar2504/" target="_blank" class="social-icon">
+                        <i class="fas fa-code"></i>
+                    </a>
+                    <a href="https://www.geeksforgeeks.org/profile/rajkumar0i53?tab=activity" target="_blank" class="social-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="image-frame">
+                    <div class="frame-border"></div>
+                    <div class="profile-image-container">
+                        <!-- Add your photo here: Replace 'your-photo.jpg' with your actual photo -->
+                        <img src="Photo.png" alt="Rajkumar" class="profile-image" id="profileImage">
+                        <!-- Fallback placeholder if image doesn't load -->
+                        <div class="profile-placeholder" id="profilePlaceholder">
+                            <i class="fas fa-user"></i>
+                            <!-- <p>Add your photo:<br>your-photo.jpg</p> -->
+                        </div>
+                    </div>
+                    <div class="floating-icons">
+                        <div class="tech-icon icon-1"><i class="fab fa-react"></i></div>
+                        <div class="tech-icon icon-2"><i class="fab fa-node-js"></i></div>
+                        <div class="tech-icon icon-3"><i class="fab fa-js"></i></div>
+                        <div class="tech-icon icon-4"><i class="fab fa-python"></i></div>
+                        <div class="tech-icon icon-5"><i class="fab fa-git-alt"></i></div>
+                        <div class="tech-icon icon-6"><i class="fas fa-database"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-lead">
+                        Aspiring Software Developer with proven ability to collaborate with cross-functional teams and senior stakeholders on strategic initiatives.
+                    </p>
+                    <p>
+                        Strong foundation in identifying business requirements, translating them into actionable technical solutions, and delivering quality results. Experienced in Agile methodologies, working with global teams, and demonstrating leadership in collaborative environments.
+                    </p>
+                    <p>
+                        Proficient in multiple programming paradigms with hands-on experience in production applications, microservices, and emerging technologies. Quick learner passionate about exploring tech trends and solving real-world business challenges.
+                    </p>
+                    
+                    <div class="about-education">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="education-item">
+                            <div class="education-degree">Bachelor of Engineering</div>
+                            <div class="education-field">Electrical and Electronics Engineering</div>
+                            <div class="education-school">Sengunthar Engineering College, Namakkal</div>
+                            <div class="education-details">
+                                <span class="education-date"><i class="far fa-calendar"></i> June 2022 - May 2026</span>
+                                <span class="education-gpa"><i class="fas fa-star"></i> CGPA: 8.5/10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coding Profiles -->
+                    <div class="coding-profiles">
+                        <h3><i class="fas fa-code"></i> Coding Profiles</h3>
+                        <div class="profiles-grid">
+                            <a href="https://leetcode.com/u/rajkumar2504/" target="_blank" class="profile-link" data-platform="leetcode">
+                                <div class="profile-icon leetcode">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-name">LeetCode</div>
+                                    <div class="profile-username">@rajkumar2504</div>
+                                </div>
+                                <i class="fas fa-external-link-alt profile-arrow"></i>
+                            </a>
+                            
+                            <a href="https://www.geeksforgeeks.org/user/rajkumar2504/" target="_blank" class="profile-link" data-platform="gfg">
+                                <div class="profile-icon gfg">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-name">GeeksforGeeks</div>
+                                    <div class="profile-username">@rajkumar2504</div>
+                                </div>
+                                <i class="fas fa-external-link-alt profile-arrow"></i>
+                            </a>
+                            
+                            <a href="https://github.com/rajkumar2504" target="_blank" class="profile-link" data-platform="github">
+                                <div class="profile-icon github">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-name">GitHub</div>
+                                    <div class="profile-username">@rajkumar2504</div>
+                                </div>
+                                <i class="fas fa-external-link-alt profile-arrow"></i>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/rajkumar2504" target="_blank" class="profile-link" data-platform="linkedin">
+                                <div class="profile-icon linkedin">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-name">LinkedIn</div>
+                                    <div class="profile-username">@rajkumar2504</div>
+                                </div>
+                                <i class="fas fa-external-link-alt profile-arrow"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Problem Solving Stats -->
+                        <div class="problem-solving-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon leetcode-bg">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>LeetCode Solutions</h4>
+                                    <p class="stat-number">150+</p>
+                                    <a href="https://leetcode.com/u/rajkumar2504/" target="_blank" class="stat-link">
+                                        View All Solutions <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon gfg-bg">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>GFG Problems Solved</h4>
+                                    <p class="stat-number">200+</p>
+                                    <a href="https://www.geeksforgeeks.org/user/rajkumar2504/" target="_blank" class="stat-link">
+                                        View All Solutions <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Cross-Functional Collaboration</h4>
+                        <p>Working seamlessly with diverse teams and stakeholders across multiple projects</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Strategic Problem Solving</h4>
+                        <p>Translating complex business requirements into elegant technical solutions</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Modern Tech Stack</h4>
+                        <p>Full-stack expertise with React, Node.js, and emerging technologies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">My professional journey</p>
+            </div>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">React Developer Intern</h3>
+                                <h4 class="timeline-company">
+                                    <i class="fas fa-building"></i>
+                                    Zenvic Software Solutions Private Limited
+                                </h4>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="far fa-calendar"></i>
+                                July 2025 - August 2025
+                            </span>
+                        </div>
+                        <ul class="timeline-description">
+                            <li>Collaborated with cross-functional teams and senior stakeholders across 2+ client projects, participating in strategic planning sessions and delivering production-ready solutions aligned to business objectives</li>
+                            <li>Engaged in Agile sprints with global team members, actively participating in key meetings including daily stand-ups, sprint planning, retrospectives, and stakeholder presentations</li>
+                            <li>Identified client business requirements through stakeholder consultation, translated them into actionable technical plans, and produced quality deliverables meeting performance and usability standards</li>
+                            <li>Demonstrated leadership qualities by mentoring junior team members, facilitating code reviews, and driving adoption of best practices across the development team</li>
+                            <li>Worked collaboratively in team environment to integrate RESTful APIs, develop reusable component libraries, and ensure code quality through peer reviews and adherence to organizational standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Things I've built</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://rajkumar2504.github.io/AI-Task-Manager/" target="_blank" class="project-link" title="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="https://github.com/rajkumar2504/AI-Task-Manager" target="_blank" class="project-link" title="Source Code">
+                                <i class="fab fa-github"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-badge">Featured</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">AI-Powered Task Manager</h3>
+                            <div class="project-links-small">
+                                <a href="https://rajkumar2504.github.io/AI-Task-Manager/" target="_blank" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/rajkumar2504/AI-Task-Manager" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Led end-to-end development of full-stack task management platform with innovative AI-driven categorization features using custom algorithms. Built real-time analytics engine processing task data with optimized algorithms.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Scalable object-oriented architecture following industry best practices</li>
+                            <li>Real-time analytics for productivity insights</li>
+                            <li>AI-driven task categorization system</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript ES6+</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">OOP</span>
+                            <span class="tech-tag">LocalStorage API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://rajkumar2504.github.io/QR-Code-Generator/" target="_blank" class="project-link" title="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="https://github.com/rajkumar2504/QR-Code-Generator" target="_blank" class="project-link" title="Source Code">
+                                <i class="fab fa-github"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <div class="project-badge">Featured</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">QR Code Generator Platform</h3>
+                            <div class="project-links-small">
+                                <a href="https://rajkumar2504.github.io/QR-Code-Generator/" target="_blank" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/rajkumar2504/QR-Code-Generator" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Developed modular application supporting 6 content types with external API integration. Achieved 95% mobile compatibility with responsive design standards and robust error handling mechanisms.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Support for 6 different content types</li>
+                            <li>95% mobile compatibility achieved</li>
+                            <li>Third-party API integration</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="more-projects">
+                <a href="https://github.com/rajkumar2504?tab=repositories" target="_blank" class="btn btn-secondary">
+                    <span>View All Projects</span>
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">My technical expertise</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i>
+                        Languages
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript ES6+</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C++</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-laptop-code"></i>
+                        Web Technologies
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">React.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">HTML5 & CSS3</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">RESTful APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i>
+                        Frameworks & Tools
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Bootstrap & Tailwind</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git & GitHub</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CI/CD Pipelines</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-database"></i>
+                        Databases & Others
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">MongoDB</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">NoSQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Linux</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Agile Methodologies</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certifications">
+                <h3 class="certifications-title">
+                    <i class="fas fa-award"></i>
+                    Certifications & Achievements
+                </h3>
+                <div class="certification-grid">
+                    <div class="certification-item">
+                        <i class="fas fa-certificate"></i>
+                        <div class="certification-content">
+                            <h4>React Development Certificate</h4>
+                            <p>Zenvic Software Solutions</p>
+                            <span class="certification-date">August 2025</span>
+                        </div>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-award"></i>
+                        <div class="certification-content">
+                            <h4>Android Developer Virtual Internship</h4>
+                            <p>Google for Developers & AICTE</p>
+                            <span class="certification-date">January - March 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="core-competencies">
+                <h3 class="competencies-title">
+                    <i class="fas fa-star"></i>
+                    Core Competencies
+                </h3>
+                <div class="competencies-list">
+                    <span class="competency-badge">Strategic Thinking</span>
+                    <span class="competency-badge">Cross-functional Collaboration</span>
+                    <span class="competency-badge">Stakeholder Engagement</span>
+                    <span class="competency-badge">Requirements Analysis</span>
+                    <span class="competency-badge">Leadership & Mentorship</span>
+                    <span class="competency-badge">Tech Trend Exploration</span>
+                    <span class="competency-badge">Agile Methodologies</span>
+                    <span class="competency-badge">Continuous Learning</span>
+                    <span class="competency-badge">Professional Communication</span>
+                    <span class="competency-badge">Team Building</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's collaborate on your next project</h3>
+                    <p>
+                        I'm always excited to connect with fellow developers, potential employers, and collaborators. Whether you have a project in mind, want to discuss tech trends, or just want to say hello, feel free to reach out!
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:rajkumar805680@gmail.com">rajkumar805680@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+919344766260">+91 9344766260</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Tenkasi, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/rajkumar2504" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/rajkumar2504" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://leetcode.com/u/rajkumar2504/" target="_blank" class="social-link" aria-label="LeetCode">
+                            <i class="fas fa-code"></i>
+                        </a>
+                        <a href="https://www.geeksforgeeks.org/user/rajkumar2504/" target="_blank" class="social-link" aria-label="GeeksforGeeks">
+                            <i class="fas fa-laptop-code"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <span class="logo-initial">R</span>
+                    <span class="logo-text">RAJKUMAR</span>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/rajkumar2504" target="_blank" class="footer-social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rajkumar2504" target="_blank" class="footer-social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/rajkumar2504/" target="_blank" class="footer-social-link">
+                        <i class="fas fa-code"></i>
+                    </a>
+                    <a href="https://www.geeksforgeeks.org/user/rajkumar2504/" target="_blank" class="footer-social-link">
+                        <i class="fas fa-laptop-code"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rajkumar. All rights reserved.</p>
+                <p class="footer-tagline">Designed & Built with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
