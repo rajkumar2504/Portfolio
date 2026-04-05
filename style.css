@@ -1934,8 +1934,8 @@ section {
     }
 
     .profile-image-container {
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        max-width: 340px;
         margin: 0 auto;
     }
 
@@ -2048,8 +2048,9 @@ section {
     }
 
     .profile-image-container {
-        width: 250px;
-        height: 250px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .tech-icon {
