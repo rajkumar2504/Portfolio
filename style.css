@@ -502,7 +502,7 @@ section {
 .image-frame {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 340px;
     margin: 0 auto;
 }
 
@@ -518,8 +518,9 @@ section {
 }
 
 .profile-image-container {
-    width: 360px;
-    height: 460px;
+    width: 100%;
+    aspect-ratio: 3/4;
+    height: auto;
     border-radius: 16px;
     overflow: hidden;
     position: relative;
@@ -2152,8 +2153,9 @@ section {
     }
 
     .profile-image-container {
-        width: 220px;
-        height: 220px;
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
     }
 
     .tech-icon {
