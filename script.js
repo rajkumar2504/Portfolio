@@ -79,6 +79,11 @@ let charIndex = 0;
 let isDeleting = false;
 
 function typeRole() {
+    if (!typingText) {
+        console.error('❌ Typing text element not found!');
+        return;
+    }
+    
     const currentRole = roles[roleIndex];
     
     if (isDeleting) {
@@ -100,12 +105,22 @@ function typeRole() {
     setTimeout(typeRole, typingSpeed);
 }
 
-// Start typing animation
-window.addEventListener('load', () => {
-    setTimeout(typeRole, 1000);
-});
+// Start typing animation immediately
+if (typingText) {
+    console.log('✅ Starting typing animation');
+    setTimeout(typeRole, 500);
+} else {
+    // Retry after DOM loads
+    document.addEventListener('DOMContentLoaded', () => {
+        const typingTextRetry = document.querySelector('.typing-text');
+        if (typingTextRetry) {
+            console.log('✅ Starting typing animation (retry)');
+            setTimeout(typeRole, 500);
+        }
+    });
+}
 
-// Stats Counter Animation
+// Stats Counter Animation - GUARANTEED TO WORK
 function animateCounter(element, target, duration = 2000) {
     let current = 0;
     const increment = target / (duration / 16);
@@ -121,22 +136,51 @@ function animateCounter(element, target, duration = 2000) {
     }, 16);
 }
 
-// Trigger counter animation on page load
-window.addEventListener('load', () => {
+// Force start counters immediately
+function forceStartCounters() {
     const statNumbers = document.querySelectorAll('.hero-stats .stat-number');
+    
+    if (statNumbers.length === 0) {
+        console.error('❌ No stat-number elements found!');
+        return;
+    }
+    
+    console.log('✅ Found', statNumbers.length, 'counters');
+    console.log('🚀 Starting animation NOW...');
+    
     statNumbers.forEach((stat, index) => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        console.log(`Counter ${index + 1}: ${target}`);
+        
         setTimeout(() => {
-            const target = parseInt(stat.dataset.target);
             animateCounter(stat, target);
-        }, 1500 + (index * 200));
+        }, index * 300);
     });
+}
+
+// Execute immediately when script loads
+setTimeout(forceStartCounters, 100);
+
+// Also execute on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Loaded - checking counters');
+    setTimeout(forceStartCounters, 200);
 });
+
+// Also execute on window load
+window.addEventListener('load', () => {
+    console.log('Window Loaded - checking counters');
+    setTimeout(forceStartCounters, 300);
+});
+
+// Expose function globally for manual testing
+window.startCounters = forceStartCounters;
 
 // Profile Image Handler
 const profileImage = document.getElementById('profileImage');
 const profilePlaceholder = document.getElementById('profilePlaceholder');
 
-if (profileImage) {
+if (profileImage && profilePlaceholder) {
     profileImage.addEventListener('load', () => {
         profilePlaceholder.style.display = 'none';
         profileImage.style.display = 'block';
@@ -165,8 +209,8 @@ if (downloadResume) {
     downloadResume.addEventListener('click', (e) => {
         e.preventDefault();
         const link = document.createElement('a');
-        link.href = 'Rajkumar_Resume.pdf';
-        link.download = 'Rajkumar_Resume.pdf';
+        link.href = 'src/Rajkumar_R _Resume.pdf';
+        link.download = 'Rajkumar_R_Resume.pdf';
         link.click();
         
         // Show success notification
@@ -183,11 +227,11 @@ function showNotification(message, type = 'success') {
         position: fixed;
         top: 100px;
         right: 20px;
-        background: ${type === 'success' ? 'linear-gradient(135deg, #00d4ff, #0099cc)' : 'linear-gradient(135deg, #ff006e, #cc0058)'};
+        background: ${type === 'success' ? 'linear-gradient(135deg, #3b82f6, #2563eb)' : 'linear-gradient(135deg, #0ea5e9, #0284c7)'};
         color: white;
         padding: 1rem 2rem;
         border-radius: 8px;
-        box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
         z-index: 10000;
         animation: slideInRight 0.5s ease-out;
         font-weight: 500;
@@ -291,7 +335,7 @@ function createParticles() {
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         const size = Math.random() * 4 + 1;
-        const colors = ['rgba(0, 212, 255, 0.8)', 'rgba(255, 214, 10, 0.8)', 'rgba(255, 0, 110, 0.6)'];
+        const colors = ['rgba(59, 130, 246, 0.8)', 'rgba(139, 92, 246, 0.8)', 'rgba(14, 165, 233, 0.6)'];
         const color = colors[Math.floor(Math.random() * colors.length)];
         
         particle.style.cssText = `
@@ -345,7 +389,7 @@ scrollTopBtn.style.cssText = `
     right: 2rem;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
     color: white;
     border: none;
     border-radius: 50%;
@@ -355,7 +399,7 @@ scrollTopBtn.style.cssText = `
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 999;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
 `;
 
 document.body.appendChild(scrollTopBtn);
@@ -376,12 +420,12 @@ scrollTopBtn.addEventListener('click', () => {
 
 scrollTopBtn.addEventListener('mouseenter', () => {
     scrollTopBtn.style.transform = 'translateY(-5px) scale(1.1)';
-    scrollTopBtn.style.boxShadow = '0 0 40px rgba(0, 212, 255, 0.8)';
+    scrollTopBtn.style.boxShadow = '0 0 40px rgba(59, 130, 246, 0.8)';
 });
 
 scrollTopBtn.addEventListener('mouseleave', () => {
     scrollTopBtn.style.transform = 'translateY(0) scale(1)';
-    scrollTopBtn.style.boxShadow = '0 0 20px rgba(0, 212, 255, 0.5)';
+    scrollTopBtn.style.boxShadow = '0 0 20px rgba(59, 130, 246, 0.5)';
 });
 
 // Cursor Trail
@@ -390,13 +434,13 @@ cursorDot.style.cssText = `
     position: fixed;
     width: 10px;
     height: 10px;
-    background: radial-gradient(circle, #00d4ff, transparent);
+    background: radial-gradient(circle, #3b82f6, transparent);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     transition: transform 0.15s ease-out;
     opacity: 0.8;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
 `;
 document.body.appendChild(cursorDot);
 
@@ -441,9 +485,10 @@ projectCards.forEach(card => {
 });
 
 // Dynamic year
-const footerYear = document.querySelector('.footer-content p');
+const footerYear = document.querySelector('.footer-bottom p');
 if (footerYear) {
-    footerYear.textContent = `© ${new Date().getFullYear()} Rajkumar. All rights reserved.`;
+    const currentText = footerYear.textContent;
+    footerYear.textContent = currentText.replace('2025', new Date().getFullYear());
 }
 
 // Accessibility
@@ -456,6 +501,40 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Console Easter Egg
-console.log('%c🚀 Welcome to My Portfolio!', 'font-size: 24px; font-weight: bold; color: #00d4ff; text-shadow: 0 0 10px #00d4ff;');
+console.log('%c🚀 Welcome to My Portfolio!', 'font-size: 24px; font-weight: bold; color: #3b82f6; text-shadow: 0 0 10px #3b82f6;');
 console.log('%c💻 Built with HTML, CSS, JavaScript', 'font-size: 14px; color: #b4b4b4;');
-console.log('%c📧 rajkumar805680@gmail.com', 'font-size: 14px; color: #ffd60a;');
+console.log('%c📧 rajkumar805680@gmail.com', 'font-size: 14px; color: #8b5cf6;');
+
+// Comprehensive Diagnostics
+setTimeout(() => {
+    console.log('\n=== 🔍 DIAGNOSTICS ===');
+    
+    // Check counters
+    const statNumbers = document.querySelectorAll('.hero-stats .stat-number');
+    console.log(`✅ Counter elements: ${statNumbers.length}`);
+    statNumbers.forEach((stat, i) => {
+        console.log(`   Counter ${i + 1}: target=${stat.getAttribute('data-target')}, current="${stat.textContent}"`);
+    });
+    
+    // Check typing
+    const typingElement = document.querySelector('.typing-text');
+    console.log(`✅ Typing element: ${typingElement ? 'Found' : 'NOT FOUND'}`);
+    if (typingElement) {
+        console.log(`   Current text: "${typingElement.textContent}"`);
+    }
+    
+    // Check photo
+    const photo = document.getElementById('profileImage');
+    console.log(`✅ Photo element: ${photo ? 'Found' : 'NOT FOUND'}`);
+    if (photo) {
+        console.log(`   Photo src: ${photo.src}`);
+        console.log(`   Photo loaded: ${photo.complete && photo.naturalWidth > 0}`);
+    }
+    
+    console.log('\n=== 🧪 MANUAL TESTING ===');
+    console.log('To manually start counters: startCounters()');
+    console.log('To test typing: (already running)');
+    console.log('=====================\n');
+}, 2000);
+
+
