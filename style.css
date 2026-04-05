@@ -1935,8 +1935,6 @@ section {
 
     .profile-image-container {
         width: 100%;
-        max-width: 340px;
-        margin: 0 auto;
     }
 
     .about-content {
@@ -2049,8 +2047,6 @@ section {
 
     .profile-image-container {
         width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
     }
 
     .tech-icon {
@@ -2153,10 +2149,12 @@ section {
         font-size: 0.9rem;
     }
 
+    .image-frame {
+        max-width: 260px;
+    }
+
     .profile-image-container {
         width: 100%;
-        max-width: 260px;
-        margin: 0 auto;
     }
 
     .tech-icon {
