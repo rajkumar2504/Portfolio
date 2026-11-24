@@ -1,25 +1,48 @@
-# Rajkumar R. — Java Backend Developer Portfolio
+# Rajkumar R. — Developer Portfolio
 
-A responsive, recruiter-focused portfolio built with plain HTML, CSS and JavaScript.
+A responsive personal portfolio for Rajkumar R., Java Backend Developer. Built with semantic HTML, CSS, vanilla JavaScript, and Vite for local development and production builds.
 
-## Files
-- `index.html` — semantic page structure and portfolio content
-- `style.css` — responsive premium dark theme
-- `script.js` — mobile navigation, reveal-on-scroll and dynamic year
-- `src/photo11.png` — your existing profile image (copy from the current repository)
-- `assets/Rajkumar_Resume.pdf` — add your latest PDF resume here
+## Run locally
 
-## Publish on GitHub Pages
-1. Keep the existing `src/photo11.png` in the same relative location.
-2. Create an `assets` folder and place your current resume PDF inside it as `Rajkumar_Resume.pdf`.
-3. Replace the old `index.html`, `style.css` and `script.js` with these files.
-4. Commit and push to the `main` branch. GitHub Pages will publish the changes.
+```sh
+npm install
+npm run dev
+```
 
-## Before publishing
-- Verify the LeetCode and GeeksforGeeks counts and update the two metrics in `index.html`.
-- Confirm each project feature is implemented in the linked repository.
-- Keep only accurate internship responsibilities and skills you can explain.
-- Check the resume link after adding the PDF.
-- Confirm email, phone, LinkedIn and project links are correct.
+Create the production site with `npm run build`; preview it locally with `npm run preview`.
 
-No framework or build step is required.
+## Project structure
+
+```text
+.
+├── assets/
+│   ├── favicon.svg
+│   ├── images/profile.jpg
+│   └── resume/Rajkumar_Resume.pdf
+├── .github/workflows/deploy.yml
+├── index.html
+├── package.json
+├── script.js
+├── style.css
+└── vite.config.js
+```
+
+The portrait and resume are the files provided in `src/`. Update the assets in `assets/` when replacing either file.
+
+## Deploy to GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` installs dependencies, builds the site, and publishes `dist/` when changes are pushed to `main` (or when manually dispatched). Vite uses `/developer-portfolio/` as its base path.
+
+1. Push the repository to GitHub and open **Settings → Pages**.
+2. Set **Build and deployment → Source** to **GitHub Actions**.
+3. Push to `main` and follow the deployment in the **Actions** tab.
+
+The requested public URL is <https://rajkumar2504.github.io/developer-portfolio/>. For that exact address, the GitHub repository must be named `developer-portfolio`. This checkout's current `origin` is `rajkumar2504/Portfolio`; GitHub Pages uses that repository name in its project-site URL. All page and asset links are relative so the site works under either repository name.
+
+The site uses Vite as a build tool and does not require a frontend framework runtime.
+
+## Links
+
+- GitHub: <https://github.com/rajkumar2504>
+- LinkedIn: <https://www.linkedin.com/in/rajkumar2504/>
+- Email: <mailto:rajkumar805680@gmail.com>

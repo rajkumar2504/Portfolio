@@ -1,34 +1,46 @@
-(() => {
-  const toggle = document.getElementById("menuToggle");
-  const links = document.getElementById("navLinks");
-  if (toggle && links) {
-    toggle.addEventListener("click", () => {
-      const isOpen = links.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-      toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    });
-    links.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-      links.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open navigation");
-    }));
-  }
+import resumeUrl from "./assets/resume/Rajkumar_Resume.pdf?url";
 
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector("#nav-links");
 
-  const items = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    items.forEach(item => observer.observe(item));
-  } else {
-    items.forEach(item => item.classList.add("visible"));
+menuToggle?.addEventListener("click", () => {
+  const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+  menuToggle.setAttribute("aria-expanded", String(!expanded));
+  menuToggle.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+  navLinks?.classList.toggle("open", !expanded);
+});
+
+navLinks?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+    menuToggle?.setAttribute("aria-label", "Open navigation");
+  });
+});
+
+document.querySelector("#year").textContent = new Date().getFullYear();
+
+document.querySelectorAll('a[href="assets/resume/Rajkumar_Resume.pdf"]').forEach((link) => {
+  link.href = resumeUrl;
+});
+
+const copyButton = document.querySelector(".copy-email");
+const toast = document.querySelector(".toast");
+let toastTimer;
+
+copyButton?.addEventListener("click", async () => {
+  const email = copyButton.dataset.email;
+  try {
+    await navigator.clipboard.writeText(email);
+    copyButton.innerHTML = 'Copied <span aria-hidden="true">✓</span>';
+    toast.textContent = "Email address copied to clipboard";
+  } catch {
+    toast.textContent = `Email: ${email}`;
   }
-})();
+  toast.classList.add("show");
+  window.clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(() => {
+    toast.classList.remove("show");
+    copyButton.innerHTML = 'Copy email <span aria-hidden="true">▢</span>';
+  }, 2400);
+});
