@@ -1,5 +1,3 @@
-import resumeUrl from "./assets/resume/Rajkumar_Resume.pdf?url";
-
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector("#nav-links");
 
@@ -19,10 +17,6 @@ navLinks?.querySelectorAll("a").forEach((link) => {
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
-
-document.querySelectorAll('a[href="assets/resume/Rajkumar_Resume.pdf"]').forEach((link) => {
-  link.href = resumeUrl;
-});
 
 const copyButton = document.querySelector(".copy-email");
 const toast = document.querySelector(".toast");
